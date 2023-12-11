@@ -7,9 +7,19 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
+    <Canvas Background="green">
+        <DockPanel Canvas.Left="300">
+            <Image Width="100" Height="100" Source="{Binding Path = FirstPlayerCards[0].ImagePath}"></Image>
+            <Image Width="100" Height="100" Source="{Binding Path = FirstPlayerCards[1].ImagePath}"></Image>
+            <Image Width="100" Height="100" Source="{Binding Path = FirstPlayerCards[2].ImagePath}"></Image>
+        </DockPanel>
 
-        <Canvas Background="green">
-            <Image Width="50" Height="50" Source="{Binding Path=ImagePath}"></Image>
-        </Canvas>
+
+        <DockPanel Canvas.Left="300" Canvas.Top="325">
+            <Image Width="100" Height="100" Source="{Binding Path = SecondPlayerCards[0].ImagePath}"></Image>
+            <Image Width="100" Height="100" Source="{Binding Path = SecondPlayerCards[1].ImagePath}"></Image>
+            <Image Width="100" Height="100" Source="{Binding Path = SecondPlayerCards[2].ImagePath}"></Image>
+        </DockPanel>
+    </Canvas>
 
 </Window>
