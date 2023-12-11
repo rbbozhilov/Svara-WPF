@@ -1,4 +1,5 @@
 ﻿
+using Svara.WPF.Services;
 using Svara.WPF.ViewModels.FullTable;
 using System;
 using System.Windows;
@@ -13,6 +14,7 @@ namespace Svara.WPF
     {
 
         private Players players = new Players();
+        private SvaraCheckService svaraService = new SvaraCheckService();
 
         public MainWindow()
         {
@@ -21,6 +23,14 @@ namespace Svara.WPF
             this.playerTurn.Content = "Player 1 Turn";
             this.UpPlayer.Visibility = Visibility.Hidden;
             this.DownPlayer.Visibility = Visibility.Hidden;
+
+            bool isHaveSvara = this.svaraService.IsHaveSvara();
+
+            if (isHaveSvara)
+            {
+                this.players.FullBet = this.svaraService.GetBet();
+                this.svaraService.Delete(this.players.FullBet);
+            }
 
         }
 
@@ -139,7 +149,9 @@ namespace Svara.WPF
             }
             else
             {
-                //TODO SVARA GAME
+                this.svaraService.AddSvara(this.players.FullBet);
+                MessageBox.Show("Svara !!!");
+                return;
             }
         }
 

@@ -22,7 +22,6 @@ namespace Svara.WPF.ViewModels.FullTable
             this.SecondPlayerCards = new List<BaseCard>();
             this.deck = new DeckService();
             this.AddCards();
-
             this.scoreFirst = new ScoreService(this.FirstPlayerCards);
             this.scoreSecond = new ScoreService(this.SecondPlayerCards);
         }
