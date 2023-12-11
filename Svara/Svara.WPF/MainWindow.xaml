@@ -13,6 +13,7 @@
             <Image Width="100" Height="100" Source="{Binding Path = FirstPlayerCards[1].ImagePath}"></Image>
             <Image Width="100" Height="100" Source="{Binding Path = FirstPlayerCards[2].ImagePath}"></Image>
         </DockPanel>
+        <Label Canvas.Left="450" Canvas.Top="100" Content="{Binding Path = ScoreFirstPlayer}"></Label>
 
 
         <DockPanel Canvas.Left="300" Canvas.Top="325">
@@ -20,6 +21,8 @@
             <Image Width="100" Height="100" Source="{Binding Path = SecondPlayerCards[1].ImagePath}"></Image>
             <Image Width="100" Height="100" Source="{Binding Path = SecondPlayerCards[2].ImagePath}"></Image>
         </DockPanel>
+        <Label Canvas.Left="450" Canvas.Top="300" Content="{Binding Path = ScoreSecondPlayer}"></Label>
+
     </Canvas>
 
 </Window>
