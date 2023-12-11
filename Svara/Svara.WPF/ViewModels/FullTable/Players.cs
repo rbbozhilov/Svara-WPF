@@ -36,6 +36,10 @@ namespace Svara.WPF.ViewModels.FullTable
 
         public int ScoreSecondPlayer => this.scoreSecond.MakeScore();
 
+        public int FullBet { get; set; }
+
+
+
 
         private void AddCards()
         {
