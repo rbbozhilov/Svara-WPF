@@ -11,10 +11,14 @@ namespace Svara.WPF
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        private Players players = new Players();
+
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = new Players();
+            this.DataContext = this.players;
+            
 
         }
 
@@ -37,7 +41,12 @@ namespace Svara.WPF
             {
                 MessageBox.Show("You cannot bet 0");
             }
+            else
+            {
+                this.players.FullBet += (int)finalBet;
 
+                this.Bet.Content = $"Full Bet: {this.players.FullBet}";
+            }
         }
 
         private void SecondPlayerBet(object sender, RoutedEventArgs e)
@@ -49,6 +58,12 @@ namespace Svara.WPF
             if (bet == 0)
             {
                 MessageBox.Show("You cannot bet 0");
+            }
+            else
+            {
+                this.players.FullBet += (int)finalBet;
+
+                this.Bet.Content = $"Full Bet: {this.players.FullBet}";
             }
         }
 
