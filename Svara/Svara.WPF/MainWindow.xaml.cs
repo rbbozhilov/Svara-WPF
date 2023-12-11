@@ -111,7 +111,12 @@ namespace Svara.WPF
 
         private void PayFirst(object sender, RoutedEventArgs e)
         {
-            this.ReturnFirst();
+            bool isTurn = this.ReturnFirst();
+
+            if (!isTurn)
+            {
+                return;
+            }
 
             this.CheckWhoWin();
         }
