@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2A2F92EA-A04D-48E5-9EA8-59C12383BFA6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Svara.WPF</RootNamespace>
+    <AssemblyName>Svara.WPF</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Card.cs" />
+    <Compile Include="Models\Cards\AsoKaro.cs" />
+    <Compile Include="Models\Cards\AsoKupa.cs" />
+    <Compile Include="Models\Cards\AsoPika.cs" />
+    <Compile Include="Models\Cards\AsoSpatia.cs" />
+    <Compile Include="Models\Cards\BaseCard.cs" />
+    <Compile Include="Models\Cards\DamaKaro.cs" />
+    <Compile Include="Models\Cards\DamaKupa.cs" />
+    <Compile Include="Models\Cards\DamaPika.cs" />
+    <Compile Include="Models\Cards\DamaSpatia.cs" />
+    <Compile Include="Models\Cards\EightKaro.cs" />
+    <Compile Include="Models\Cards\EightKupa.cs" />
+    <Compile Include="Models\Cards\EightPika.cs" />
+    <Compile Include="Models\Cards\EightSpatia.cs" />
+    <Compile Include="Models\Cards\NineKaro.cs" />
+    <Compile Include="Models\Cards\NineKupa.cs" />
+    <Compile Include="Models\Cards\NinePika.cs" />
+    <Compile Include="Models\Cards\NineSpatia.cs" />
+    <Compile Include="Models\Cards\PopKaro.cs" />
+    <Compile Include="Models\Cards\PopKupa.cs" />
+    <Compile Include="Models\Cards\PopPika.cs" />
+    <Compile Include="Models\Cards\PopSpatia.cs" />
+    <Compile Include="Models\Cards\SevenKaro.cs" />
+    <Compile Include="Models\Cards\SevenKupa.cs" />
+    <Compile Include="Models\Cards\SevenPika.cs" />
+    <Compile Include="Models\Cards\SevenSpatia.cs" />
+    <Compile Include="Models\Cards\TenKaro.cs" />
+    <Compile Include="Models\Cards\TenKupa.cs" />
+    <Compile Include="Models\Cards\TenPika.cs" />
+    <Compile Include="Models\Cards\TenSpatia.cs" />
+    <Compile Include="Models\Cards\ValeKaro.cs" />
+    <Compile Include="Models\Cards\ValeKupa.cs" />
+    <Compile Include="Models\Cards\ValePika.cs" />
+    <Compile Include="Models\Cards\ValeSpatia.cs" />
+    <Compile Include="Models\Player.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\Deck\" />
+    <Folder Include="Models\Player\" />
+    <Folder Include="Services\" />
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\damakupa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\asokaro.png" />
+    <Resource Include="Images\asokupa.png" />
+    <Resource Include="Images\asopika.png" />
+    <Resource Include="Images\asospatia.png" />
+    <Resource Include="Images\damakaro.png" />
+    <Resource Include="Images\damapika.png" />
+    <Resource Include="Images\damaspatia.png" />
+    <Resource Include="Images\eightkaro.png" />
+    <Resource Include="Images\eightkupa.png" />
+    <Resource Include="Images\eightpika.png" />
+    <Resource Include="Images\eightspatia.png" />
+    <Resource Include="Images\ninekaro.png" />
+    <Resource Include="Images\ninekupa.png" />
+    <Resource Include="Images\ninepika.png" />
+    <Resource Include="Images\ninespatia.png" />
+    <Resource Include="Images\popkaro.png" />
+    <Resource Include="Images\popkupa.png" />
+    <Resource Include="Images\poppika.png" />
+    <Resource Include="Images\popspatia.png" />
+    <Resource Include="Images\sevenkaro.png" />
+    <Resource Include="Images\sevenkupa.png" />
+    <Resource Include="Images\sevenpika.png" />
+    <Resource Include="Images\sevenspatia.png" />
+    <Resource Include="Images\tenkaro.png" />
+    <Resource Include="Images\tenkupa.png" />
+    <Resource Include="Images\tenpika.png" />
+    <Resource Include="Images\tenspatia.png" />
+    <Resource Include="Images\valekaro.png" />
+    <Resource Include="Images\valekupa.png" />
+    <Resource Include="Images\valepika.png" />
+    <Resource Include="Images\valespatia.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
