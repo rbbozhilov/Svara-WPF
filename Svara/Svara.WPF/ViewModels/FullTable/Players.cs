@@ -38,6 +38,18 @@ namespace Svara.WPF.ViewModels.FullTable
 
         public int FullBet { get; set; }
 
+        public int OldBet { get; set; }
+
+        public bool FirstPlayerTurn { get; set; } = true;
+
+        public bool SecondPlayerTurn { get; set; } = false;
+
+
+        private void ChangeTurn()
+        {
+            this.FirstPlayerTurn = false;
+            this.SecondPlayerTurn = true;
+        }
 
 
 
