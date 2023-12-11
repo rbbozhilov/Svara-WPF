@@ -29,7 +29,34 @@ namespace Svara.WPF
 
         private void FirstPlayerBet(object sender, RoutedEventArgs e)
         {
-            var value = this.Text.Text;
+            decimal bet = decimal.Parse(this.Slider.Value.ToString());
+
+            decimal finalBet = Math.Floor(bet);
+
+            if(bet == 0)
+            {
+                MessageBox.Show("You cannot bet 0");
+            }
+
+        }
+
+        private void SecondPlayerBet(object sender, RoutedEventArgs e)
+        {
+            decimal bet = decimal.Parse(this.Slider1.Value.ToString());
+
+            decimal finalBet = Math.Floor(bet);
+
+            if (bet == 0)
+            {
+                MessageBox.Show("You cannot bet 0");
+            }
+        }
+
+        private void SliderSecond_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            int value = Convert.ToInt32(e.NewValue);
+            string message = $"Bet: {value}";
+            this.SecondText.Text = message;
         }
     }
 }

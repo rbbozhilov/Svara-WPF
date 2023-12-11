@@ -9,8 +9,8 @@
 
     <Canvas Background="green">
 
-        <Button Width="55" Height="25" Canvas.Left="250">CALL</Button>
-        <Button Click="FirstPlayerBet" Width="55" Height="25" Canvas.Left="100">BET</Button>
+        <Button Width="55" Height="25" Canvas.Left="250" Background="Yellow">CALL</Button>
+        <Button Click="FirstPlayerBet" Width="55" Height="25" Canvas.Left="100" Background="Blue">BET</Button>
         <Slider Name="Slider" ValueChanged="slideFirst_ValueChanged" Minimum="0" Maximum="100" Width="100" TickFrequency="100"></Slider>
         <TextBlock  Canvas.Top="20" Name="Text"></TextBlock>
 
@@ -23,12 +23,20 @@
         <Button Width="55" Height="25" Canvas.Left="610" Background="Red">FOLD</Button>
         <Label Canvas.Left="450" Canvas.Top="100" Content="{Binding Path = ScoreFirstPlayer}"></Label>
 
+        <Label Name="Bet" Canvas.Left="420" Canvas.Top="200">eqweqwe</Label>
 
+        <Button Width="55" Height="25" Canvas.Left="250" Canvas.Top="390" Background="Yellow">CALL</Button>
+        <Button Click="SecondPlayerBet" Width="55" Height="25" Canvas.Left="100" Canvas.Top="390" Background="Blue">BET</Button>
+        <Slider Canvas.Top="390" Name="Slider1" ValueChanged="SliderSecond_ValueChanged" Minimum="0" Maximum="100" Width="100" TickFrequency="100"></Slider>
+        <TextBlock  Canvas.Top="400" Name="SecondText"></TextBlock>
+        
+        
         <DockPanel Canvas.Left="300" Canvas.Top="325">
             <Image Width="100" Height="100" Source="{Binding Path = SecondPlayerCards[0].ImagePath}"></Image>
             <Image Width="100" Height="100" Source="{Binding Path = SecondPlayerCards[1].ImagePath}"></Image>
             <Image Width="100" Height="100" Source="{Binding Path = SecondPlayerCards[2].ImagePath}"></Image>
         </DockPanel>
+        <Button Width="55" Height="25" Canvas.Left="610" Canvas.Top="390" Background="Red">FOLD</Button>
         <Label Canvas.Left="450" Canvas.Top="300" Content="{Binding Path = ScoreSecondPlayer}"></Label>
 
     </Canvas>
