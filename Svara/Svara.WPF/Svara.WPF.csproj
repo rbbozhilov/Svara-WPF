@@ -171,5 +171,8 @@
     <Resource Include="Images\valepika.png" />
     <Resource Include="Images\valespatia.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\backcard.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

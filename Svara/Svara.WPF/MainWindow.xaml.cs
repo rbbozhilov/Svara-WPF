@@ -19,7 +19,8 @@ namespace Svara.WPF
             InitializeComponent();
             this.DataContext = this.players;
             this.playerTurn.Content = "Player 1 Turn";
-
+            this.UpPlayer.Visibility = Visibility.Hidden;
+            this.DownPlayer.Visibility = Visibility.Hidden;
 
         }
 
@@ -196,6 +197,71 @@ namespace Svara.WPF
                 this.players.FirstPlayerTurn = true;
                 this.playerTurn.Content = "Player 1 turn";
                 return true;
+            }
+        }
+
+        private void ShowFirstCards_Click(object sender, RoutedEventArgs e)
+        {
+            var buttonContent = this.ShowFirstCards.Content;
+
+            if (buttonContent == "Show cards")
+            {
+                bool isTurn = this.IsYourTurnCheckCards();
+
+                if (!isTurn)
+                {
+                    MessageBox.Show("It's not your turn!");
+                    return;
+                }
+
+                this.UpPlayer.Visibility = Visibility.Visible;
+                this.BackUp.Visibility = Visibility.Hidden;
+                this.ShowFirstCards.Content = "Hide cards";
+            }
+            else
+            {
+                this.UpPlayer.Visibility = Visibility.Hidden;
+                this.ShowFirstCards.Content = "Show cards";
+                this.BackUp.Visibility = Visibility.Visible;
+            }
+
+        }
+
+        private void ShowSecondCards_Click(object sender, RoutedEventArgs e)
+        {
+            var buttonContent = this.ShowSecondCards.Content;
+
+            if (buttonContent == "Show cards")
+            {
+                bool isTurn = this.IsYourTurnCheckCards();
+
+                if (isTurn)
+                {
+                    MessageBox.Show("It's not your turn!");
+                    return;
+                }
+
+                this.DownPlayer.Visibility = Visibility.Visible;
+                this.BackDown.Visibility = Visibility.Hidden;
+                this.ShowSecondCards.Content = "Hide cards";
+            }
+            else
+            {
+                this.DownPlayer.Visibility = Visibility.Hidden;
+                this.BackDown.Visibility = Visibility.Visible;
+                this.ShowSecondCards.Content = "Show cards";
+            }
+        }
+
+        private bool IsYourTurnCheckCards()
+        {
+            if (this.players.FirstPlayerTurn)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 
