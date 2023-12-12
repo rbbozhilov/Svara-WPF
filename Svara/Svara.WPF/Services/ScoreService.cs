@@ -29,9 +29,13 @@ namespace Svara.WPF.Services
             if (firstCard.Name == secondCard.Name && secondCard.Name == thirdCard.Name)
             {
 
-                if (firstCard.Name == "7")
+                if ((firstCard.Name == "Seven") && (firstCard.Type == "Spatia" || secondCard.Type == "Spatia" || thirdCard.Type == "Spatia"))
                 {
-                    return 33;
+                    return 34;
+                }
+                else if (firstCard.Name == "Seven")
+                {
+                    return 30;
                 }
 
 
@@ -40,12 +44,12 @@ namespace Svara.WPF.Services
 
             int sum = 0;
 
-            if ((firstCard.Name == "7" && firstCard.Type == "Spatia" && secondCard.Type == thirdCard.Type) || (secondCard.Name == "7" && secondCard.Type == "Spatia" && firstCard.Type == thirdCard.Type) || (thirdCard.Type == "Spatia" && thirdCard.Name == "7" && firstCard.Type == secondCard.Type))
+            if ((firstCard.Name == "Seven" && firstCard.Type == "Spatia" && secondCard.Type == thirdCard.Type) || (secondCard.Name == "Seven" && secondCard.Type == "Spatia" && firstCard.Type == thirdCard.Type) || (thirdCard.Type == "Spatia" && thirdCard.Name == "Seven" && firstCard.Type == secondCard.Type))
             {
                 return firstCard.Points + secondCard.Points + thirdCard.Points;
             }
 
-            if ((firstCard.Name == "7" && firstCard.Type == "Spatia" && secondCard.Name == thirdCard.Name) || (secondCard.Name == "7" && secondCard.Type == "Spatia" && firstCard.Name == thirdCard.Name) || (thirdCard.Name == "7" && thirdCard.Type == "Spatia" && firstCard.Name == secondCard.Name))
+            if ((firstCard.Name == "Seven" && firstCard.Type == "Spatia" && secondCard.Name == thirdCard.Name) || (secondCard.Name == "Seven" && secondCard.Type == "Spatia" && firstCard.Name == thirdCard.Name) || (thirdCard.Name == "Seven" && thirdCard.Type == "Spatia" && firstCard.Name == secondCard.Name))
             {
                 return firstCard.Points + secondCard.Points + thirdCard.Points;
             }
@@ -57,13 +61,17 @@ namespace Svara.WPF.Services
                 return 22;
             }
 
-            if ((firstCard.Name == "7" && secondCard.Name == "7") || (secondCard.Name == "7" && thirdCard.Name == "7") || (firstCard.Name == "7" && thirdCard.Name == "7"))
+            if ((firstCard.Name == "Seven" && secondCard.Name == "Seven") || (secondCard.Name == "Seven" && thirdCard.Name == "Seven") || (firstCard.Name == "Seven" && thirdCard.Name == "Seven"))
             {
                 return 23;
             }
 
 
-            if (firstCard.Type == secondCard.Type && secondCard.Type == thirdCard.Type)
+            if ((firstCard.Name == "Seven" && firstCard.Type == "Spatia") || (secondCard.Name == "Seven" && secondCard.Type == "Spatia") || (thirdCard.Name == "Seven" && thirdCard.Type == "Spatia"))
+            {
+                sum = BiggestNumber();
+            }
+            else if (firstCard.Type == secondCard.Type && secondCard.Type == thirdCard.Type)
             {
                 sum = firstCard.Points + secondCard.Points + thirdCard.Points;
             }
@@ -96,7 +104,7 @@ namespace Svara.WPF.Services
             BaseCard secondCard = this.cards[1];
             BaseCard thirdCard = this.cards[2];
 
-            if (firstCard.Name == "7" && firstCard.Type == "Spatia")
+            if (firstCard.Name == "Seven" && firstCard.Type == "Spatia")
             {
                 if (secondCard.Points >= thirdCard.Points)
                 {
@@ -107,7 +115,7 @@ namespace Svara.WPF.Services
                     return firstCard.Points + thirdCard.Points;
                 }
             }
-            else if (secondCard.Name == "7" && secondCard.Type == "Spatia")
+            else if (secondCard.Name == "Seven" && secondCard.Type == "Spatia")
             {
                 if (firstCard.Points >= thirdCard.Points)
                 {
@@ -118,7 +126,7 @@ namespace Svara.WPF.Services
                     return secondCard.Points + thirdCard.Points;
                 }
             }
-            else if (thirdCard.Name == "7" && thirdCard.Type == "Spatia")
+            else if (thirdCard.Name == "Seven" && thirdCard.Type == "Spatia")
             {
                 if (secondCard.Points >= firstCard.Points)
                 {
